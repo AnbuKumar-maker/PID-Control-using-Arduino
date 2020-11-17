@@ -1,0 +1,41 @@
+Implementing PID in Code
+To implement a PID controller in a code or an Arduino sketch, five parameters must be known: proportional, integral and derivative constants, input value and set point value.
+
+PID computation must be inside a looping function. The first part of the function should be determining the time elapsed. In Arduino, the current time can be determined by millis() and the elapsed time is just:
+
+currentTime = millis();
+elapsedTime = currentTime - previousTime;
+1
+2
+currentTime = millis();
+elapsedTime = currentTime - previousTime;
+Next, the error must be determined:
+
+error = setPoint - input;
+1
+error = setPoint - input;
+Recall that the integral of the error is the cumulative error over time. To calculate an integral using Arduino, we simply do:
+
+cumError += error * elapsedTime;
+1
+cumError += error * elapsedTime;
+The derivative of the error is the rate of change of the error:
+
+rateError = (error - lastError)/elapsedTime;
+1
+rateError = (error - lastError)/elapsedTime;
+Finally, the computed output is:
+
+output = Kp * error + Ki * cumError + Kd * rateError;
+1
+output = Kp * error + Ki * cumError + Kd * rateError;
+Here, the Kp, Ki and Kd are the predetermined constants.
+
+Finally, the variables must be noted for the next iteration:
+
+lastError = error;
+previousTime = currentTime;
+1
+2
+lastError = error;
+previousTime = currentTime;
