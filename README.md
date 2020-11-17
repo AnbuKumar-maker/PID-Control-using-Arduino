@@ -1,6 +1,6 @@
-# PID-Control-using-Arduino
+# PID-Control-using-Arduino : The working principles of the PID controller The working principles of the PID controller are best understood by breaking it down and analyzing each element individually.  
 
-The working principles of the PID controller The working principles of the PID controller are best understood by breaking it down and analyzing each element individually.  Proportional gain—This gives an output that is proportional to current error (the difference between what you want and what you have). If, for example, a room’s temperature setpoint is 22°C, but the room is actually at 24°C (an error of 2°C) the controller applies a corrective action that is proportional to the error—in this scenario, it may turn the heat to a medium setting, whereas it would set it to a high setting if the room’s temperature was say 15°C.  
+Proportional gain—This gives an output that is proportional to current error (the difference between what you want and what you have). If, for example, a room’s temperature setpoint is 22°C, but the room is actually at 24°C (an error of 2°C) the controller applies a corrective action that is proportional to the error—in this scenario, it may turn the heat to a medium setting, whereas it would set it to a high setting if the room’s temperature was say 15°C.  
 
 Integral gain—This is multiplied by the integral (or sum) of the error by looking at its history. Returning back to the temperature example, the system may detect that 10 minutes were spent at 24°C, 10 at 23°C, and 10 at 22°C as the room cools down. If a system is heading too slowly to a setpoint, the integral error begins to increase and makes the correction stronger, in this case, perhaps by turning the heater down to a lower level.  
 
